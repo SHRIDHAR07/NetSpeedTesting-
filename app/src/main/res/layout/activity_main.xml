@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin"
+        android:background="@android:color/holo_green_light"
+        android:elevation="@dimen/elevation"
+        android:text="@string/start"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnStart"
+        android:layout_margin="@dimen/margin"
+        android:background="@android:color/holo_red_light"
+        android:elevation="@dimen/elevation"
+        android:text="@string/stop"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnStop"
+        android:layout_margin="@dimen/margin"
+        android:background="@android:color/holo_blue_light"
+        android:elevation="@dimen/elevation"
+        android:text="@string/send"
+        android:textColor="@android:color/white" />
+</RelativeLayout>
