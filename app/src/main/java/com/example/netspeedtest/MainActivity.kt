@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     fileIntent.putExtra(Intent.EXTRA_STREAM, path)
                     startActivity(Intent.createChooser(fileIntent, "Send mail"))
 
-                }catch (e:Exception){
+                } catch (e: Exception) {
                     e.printStackTrace()
                 }
 

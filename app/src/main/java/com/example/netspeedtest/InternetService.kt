@@ -10,10 +10,8 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import java.io.File
-import java.util.*
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import java.text.SimpleDateFormat
+import java.util.*
 
 
 class InternetService : Service() {
@@ -52,9 +50,6 @@ class InternetService : Service() {
             )
         }
         mRunnable.run()
-        // Create an explicit intent for an Activity in your app
-
-
         return START_STICKY
     }
 
@@ -69,8 +64,11 @@ class InternetService : Service() {
             val nc = cm.getNetworkCapabilities(cm.activeNetwork)
             downSpeed = nc!!.linkDownstreamBandwidthKbps.toDouble()
             upSpeed = nc.linkUpstreamBandwidthKbps.toDouble()
-            val spf = SimpleDateFormat("MMM dd, yyyy hh:mm:ss aaa")
-            data.append("\n $downSpeed kbps,$upSpeed kbps,${ SimpleDateFormat("MMM dd,hh:mm:ss aaa").format(date)}")
+            data.append(
+                "\n $downSpeed kbps,$upSpeed kbps,${SimpleDateFormat("MMM dd,hh:mm:ss aaa").format(
+                    date
+                )}"
+            )
             try {
                 var file = createFile()
                 fileName = file.name
